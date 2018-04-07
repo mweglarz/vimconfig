@@ -73,10 +73,6 @@ set nu
 set mouse=a
 set ic
 
-" NERDTree setup
-"
-map <C-r> :!./main<CR>
-
 " Cursor settings
 let &t_SI = "\<esc>[5 q"
 let &t_SR = "\<esc>[5 q"
