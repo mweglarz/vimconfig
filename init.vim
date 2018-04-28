@@ -14,6 +14,7 @@ Plug 'scrooloose/nerdtree'
 
 " Autocomplete braces
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/vim-slash'
 
 " Color schemes
 Plug 'ayu-theme/ayu-vim' " or other package manager
@@ -41,6 +42,8 @@ call plug#end()
 " COMMON
 set nohls
 set autowrite
+set splitright
+set splitbelow
 
 " Open NERDTree automatically when no file specified
 autocmd StdinReadPre * let s:std_in=1
@@ -69,6 +72,8 @@ let g:python3_host_prog  = '/usr/bin/python3'
 let g:python3_host_skip_check = 1
 
 nnoremap <space> za
+nnoremap hs :set hlsearch!<CR>
+nnoremap hn :set nohls<CR>
 
 " Close preview window when done completing
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
