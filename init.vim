@@ -13,10 +13,22 @@ Plug 'scrooloose/nerdtree'
 " Autocomplete braces
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-slash'
+
+" Files
 Plug 'junegunn/fzf.vim'
+
+" Tagbar (class structure)
+Plug 'majutsushi/tagbar'
+
+" Window swap
+Plug 'wesQ3/vim-windowswap'
+
+" Git
+Plug 'tpope/vim-fugitive'
 
 " Color schemes
 Plug 'ayu-theme/ayu-vim' " or other package manager
+Plug 'drewtempelmeyer/palenight.vim'
 
 " Powerline for vim
 Plug 'vim-airline/vim-airline'
@@ -42,8 +54,21 @@ set nohls
 set autowrite
 set splitright
 set splitbelow
+set nu
+set ignorecase
+set smartcase
+set background=dark
+set expandtab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set mouse=a
+syntax on
+" Enable folding
+set foldmethod=indent
+set foldlevel=99     " Open NERDTree automatically when no file specified
+set encoding=utf-8
 
-" Open NERDTree automatically when no file specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Open NerdTree with Ctrl+n
@@ -54,10 +79,16 @@ set laststatus=2
 
 " Color schemes
 set termguicolors     " enable true colors support
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 " let ayucolor="light"  " for light version of theme
 " let ayucolor="mirage" " for mirage version of theme
 let ayucolor="dark"   " for dark version of theme
-colorscheme ayu
+" colorscheme ayu
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+let g:airline_powerline_fonts = 1
+let g:airline_theme='base16'
 
 let mapleader=","
 
