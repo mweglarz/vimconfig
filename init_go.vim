@@ -19,6 +19,10 @@ au FileType go nmap <leader>en :cnext<CR>
 au FileType go nmap <leader>ep :cprevious<CR>
 au FileType go nmap <leader>ec :cclose<CR>
 
+au FileType go nmap <leader>ln :lnext<CR>
+au FileType go nmap <leader>lp :lprevious<CR>
+au FileType go nmap <leader>lc :lclose<CR>
+
 let g:go_fmt_command = "goimports"
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1

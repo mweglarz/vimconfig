@@ -7,14 +7,13 @@ source ~/.vimrc
 " - Avoid using standard Vim directory names like 'plugin'
 call plug#begin('~/.vim/plugged')
 
-Plug 'Shougo/deoplete.nvim'
-
 " TreeView
 Plug 'scrooloose/nerdtree'
 
 " Autocomplete braces
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-slash'
+Plug 'junegunn/fzf.vim'
 
 " Color schemes
 Plug 'ayu-theme/ayu-vim' " or other package manager
@@ -27,14 +26,13 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'zchee/deoplete-jedi'
 
 " Go lang plugins
-Plug 'fatih/vim-go'
+Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'majutsushi/tagbar'
 Plug 'jodosha/vim-godebug'
-Plug 'ctrlpvim/ctrlp.vim'
+" Plug 'ctrlpvim/ctrlp.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -90,6 +88,9 @@ source ~/.config/nvim/init_python.vim
 
 " GO LANG SETUP
 source ~/.config/nvim/init_go.vim
+
+"FZF
+nnoremap <leader>of :Files<CR>
 
 " neosnippet setup
 " Plugin key-mappings.
