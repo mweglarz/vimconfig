@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 " Color schemes
 Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'drewtempelmeyer/palenight.vim'
+Plug 'morhetz/gruvbox'
 
 " Powerline for vim
 Plug 'vim-airline/vim-airline'
@@ -96,7 +97,9 @@ let mapleader=","
 set completeopt+=noselect
 
 " Path to python interpreter for neovim
-let g:python3_host_prog  = '/usr/bin/python3'
+" mac os 
+" let g:python3_host_prog  = '/Users/mweglarz/bin/python'
+let g:python3_host_prog  = '/Users/mweglarz/bin/python'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
 
