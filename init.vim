@@ -14,6 +14,9 @@ Plug 'scrooloose/nerdtree'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-slash'
 
+" Multicursor
+Plug 'terryma/vim-multiple-cursors'
+
 " Files
 Plug 'junegunn/fzf.vim'
 
@@ -72,7 +75,8 @@ set encoding=utf-8
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Open NerdTree with Ctrl+n
-map <C-n> :NERDTreeToggle<CR>
+map <C-c> :NERDTreeToggle<CR>
+map <C-s> :TagbarToggle<CR>
 
 " always show powerline
 set laststatus=2
@@ -101,8 +105,8 @@ let g:python3_host_prog  = '/usr/bin/python3'
 let g:python3_host_skip_check = 1
 
 nnoremap <space> za
-nnoremap hs :set hlsearch!<CR>
-nnoremap hn :set nohls<CR>
+nnoremap <C-h>s :set hlsearch!<CR>
+nnoremap <C-h>n :set nohls<CR>
 
 " Close preview window when done completing
 " autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
