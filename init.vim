@@ -103,7 +103,9 @@ set completeopt+=noselect
 " Path to python interpreter for neovim
 " mac os 
 " let g:python3_host_prog  = '/Users/mweglarz/bin/python'
-let g:python3_host_prog  = '/Users/mweglarz/bin/python'
+" linux
+" let g:python3_host_prog  = '/usr/bin/python3'
+let g:python3_host_prog  = '/usr/bin/python3'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
 
