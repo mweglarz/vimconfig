@@ -31,8 +31,9 @@ Plug 'tpope/vim-fugitive'
 
 " Color schemes
 Plug 'ayu-theme/ayu-vim' " or other package manager
-Plug 'drewtempelmeyer/palenight.vim'
 Plug 'morhetz/gruvbox'
+Plug 'danilo-augusto/vim-afterglow'
+Plug 'chriskempson/base16-vim'
 
 " Powerline for vim
 Plug 'vim-airline/vim-airline'
@@ -84,21 +85,11 @@ set laststatus=2
 
 " Color schemes
 set termguicolors     " enable true colors support
-let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-" let ayucolor="light"  " for light version of theme
-" let ayucolor="mirage" " for mirage version of theme
-let ayucolor="dark"   " for dark version of theme
-" colorscheme ayu
-let g:gruvbox_italic=1
-let g:gruvbox_contrast_dark='hard'
-colorscheme gruvbox
+colorscheme base16-gruvbox-dark-hard
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16'
 
 let mapleader=","
-
-" deoplete.nvim recommend
-set completeopt+=noselect
 
 " Path to python interpreter for neovim
 " mac os 
@@ -108,6 +99,8 @@ set completeopt+=noselect
 let g:python3_host_prog  = '/usr/bin/python3'
 " Skip the check of neovim module
 let g:python3_host_skip_check = 1
+" To disable python 2
+let g:loaded_python_provider = 1
 
 nnoremap <space> za
 nnoremap <C-h>s :set hlsearch!<CR>
@@ -149,15 +142,18 @@ smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
 \ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 
 " Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
+" let g:neosnippet#enable_snipmate_compatibility = 1
 " Tell Neosnippet about the other snippets
 let g:neosnippet#snippets_directory='~/.vim/mw-snippets'
 let g:neosnippet#scope_aliases = {}
 let g:neosnippet#scope_aliases['go'] = 'go, common'
+let g:neosnippet#enable_completed_snippet = 1
 
+" deoplete.nvim recommend
+set completeopt+=longest
 " For conceal markers.
 if has('conceal')
-  set conceallevel=2 concealcursor=niv
+  set conceallevel=1 concealcursor=niv
 endif
 
 set rtp+=~/.fzf
