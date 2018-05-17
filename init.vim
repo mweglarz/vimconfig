@@ -87,7 +87,6 @@ map <C-s> :TagbarToggle<CR>
 set laststatus=2
 
 " Color schemes
-set t_Co=256
 set termguicolors     " enable true colors support
 " let ayucolor="dark" " for dark version of theme
 let g:gruvbox_termcolors=256
@@ -95,7 +94,6 @@ let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='soft'
 colorscheme gruvbox
 let g:airline_powerline_fonts = 1
-let g:airline_theme='base16'
 
 let mapleader=","
 
