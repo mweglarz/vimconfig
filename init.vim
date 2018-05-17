@@ -34,6 +34,9 @@ Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'morhetz/gruvbox'
 Plug 'danilo-augusto/vim-afterglow'
 Plug 'chriskempson/base16-vim'
+Plug 'aradunovic/perun.vim'
+Plug 'mweglarz/spacedust-theme-vim'
+Plug 'geetarista/ego.vim'
 
 " Powerline for vim
 Plug 'vim-airline/vim-airline'
@@ -84,8 +87,13 @@ map <C-s> :TagbarToggle<CR>
 set laststatus=2
 
 " Color schemes
+set t_Co=256
 set termguicolors     " enable true colors support
-colorscheme base16-gruvbox-dark-hard
+" let ayucolor="dark" " for dark version of theme
+let g:gruvbox_termcolors=256
+let g:gruvbox_contrast_dark='hard'
+let g:gruvbox_contrast_light='soft'
+colorscheme gruvbox
 let g:airline_powerline_fonts = 1
 let g:airline_theme='base16'
 
