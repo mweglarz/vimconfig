@@ -77,6 +77,15 @@ set foldmethod=indent
 set foldlevel=99     " Open NERDTree automatically when no file specified
 set encoding=utf-8
 
+" Windows
+set previewheight=6
+:botright cwindow
+
+" Tagbar
+let g:tagbar_autopreview=1
+let g:tagbar_autoclose=1
+let g:tagbar_autofocus=1
+
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " Open NerdTree with Ctrl+n
