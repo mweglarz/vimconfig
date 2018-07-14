@@ -9,25 +9,23 @@ call plug#begin('~/.vim/plugged')
 
 " TreeView
 Plug 'scrooloose/nerdtree'
-
+" Commenting code
+Plug 'scrooloose/nerdcommenter'
 " Autocomplete braces
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-slash'
-
 " Multicursor
 Plug 'terryma/vim-multiple-cursors'
-
 " Files
 Plug 'junegunn/fzf.vim'
-
 " Tagbar (class structure)
 Plug 'majutsushi/tagbar'
-
 " Window swap
 Plug 'wesQ3/vim-windowswap'
-
 " Git
 Plug 'tpope/vim-fugitive'
+" Syntax for many languages
+Plug 'vim-syntastic/syntastic'
 
 " Color schemes
 Plug 'ayu-theme/ayu-vim' " or other package manager
@@ -42,6 +40,11 @@ Plug 'geetarista/ego.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Javascript plugins
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'othree/html5.vim'
+
 " Python plugins
 Plug 'zchee/deoplete-jedi'
 
@@ -52,7 +55,6 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'jodosha/vim-godebug'
-" Plug 'ctrlpvim/ctrlp.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -80,6 +82,14 @@ set encoding=utf-8
 " Windows
 set previewheight=6
 :botright cwindow
+
+" Commenting code
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+" Enable NERDCommenterToggle to check all selected lines is commented or not 
+let g:NERDToggleCheckAllLines = 1
 
 " Tagbar
 let g:tagbar_autopreview=1
@@ -130,6 +140,9 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:AutoPairsShortcutFastWrap = '<C-e>'
 " let g:AutoPairsShortcutJump = '<D-n>'
 " let g:AutoPairsShortcutBackInsert = '<D-b>'
+
+" JAVASCRIPT SETUP
+source ~/.config/nvim/init_js.vim
 
 " PYTHON SETUP
 source ~/.config/nvim/init_python.vim
