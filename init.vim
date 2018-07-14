@@ -49,6 +49,7 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
 " Javascript plugins
+Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
@@ -68,7 +69,6 @@ set nohls
 set autowrite
 set splitright
 set splitbelow
-set nu
 set ignorecase
 set smartcase
 set background=dark
@@ -77,12 +77,13 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set mouse=a
-set relativenumber
+set number relativenumber
 syntax on
 " Enable folding
 set foldmethod=indent
 set foldlevel=99     " Open NERDTree automatically when no file specified
 set encoding=utf-8
+set scroll=20
 
 " Windows
 set previewheight=6
