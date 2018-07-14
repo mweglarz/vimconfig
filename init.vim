@@ -26,6 +26,8 @@ Plug 'wesQ3/vim-windowswap'
 Plug 'tpope/vim-fugitive'
 " Syntax for many languages
 Plug 'vim-syntastic/syntastic'
+" Easy motion
+Plug 'easymotion/vim-easymotion'
 
 " Color schemes
 Plug 'ayu-theme/ayu-vim' " or other package manager
@@ -40,6 +42,12 @@ Plug 'geetarista/ego.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
+" Code completion
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-go', { 'do': 'make'}
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'
+
 " Javascript plugins
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
@@ -50,10 +58,6 @@ Plug 'zchee/deoplete-jedi'
 
 " Go lang plugins
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-go', { 'do': 'make'}
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'jodosha/vim-godebug'
 
 " Initialize plugin system
@@ -73,6 +77,7 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set mouse=a
+set relativenumber
 syntax on
 " Enable folding
 set foldmethod=indent
