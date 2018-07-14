@@ -83,7 +83,7 @@ syntax on
 set foldmethod=indent
 set foldlevel=99     " Open NERDTree automatically when no file specified
 set encoding=utf-8
-set scroll=20
+autocmd BufEnter * set scroll=20
 
 " Windows
 set previewheight=6
