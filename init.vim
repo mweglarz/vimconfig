@@ -78,12 +78,13 @@ set softtabstop=4
 set shiftwidth=4
 set mouse=a
 set number relativenumber
+set cc=80
 syntax on
 " Enable folding
 set foldmethod=indent
 set foldlevel=99     " Open NERDTree automatically when no file specified
 set encoding=utf-8
-autocmd BufRead * set scroll=20
+" autocmd BufRead * set scroll=20
 
 " Windows
 set previewheight=6
