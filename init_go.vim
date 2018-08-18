@@ -12,8 +12,9 @@ au FileType go nmap <leader>th <Plug>(go-alternate-split)
 au FileType go nmap <leader>tb <Plug>(go-test-compile)
 au FileType go nmap gb <Plug>(go-def-pop)
 au FileType go nmap gd <Plug>(go-def)
-au FileType go nmap <leader>dt :GoToggleBreakpoint<CR>
-au FileType go nmap <leader>dr :GoDebug<CR>
+au FileType go nmap <leader>db :DlvToggleBreakpoint<CR>
+au FileType go nmap <leader>dt :DlvTest<CR>
+au FileType go nmap <leader>dr :DlvDebug<CR>
 
 au FileType go nmap <leader>en :cnext<CR>
 au FileType go nmap <leader>ep :cprevious<CR>
@@ -23,7 +24,7 @@ au FileType go nmap <leader>ln :lnext<CR>
 au FileType go nmap <leader>lp :lprevious<CR>
 au FileType go nmap <leader>lc :lclose<CR>
 
-let g:go_fmt_command = "goimports"
+" let g:go_fmt_command = "goimports"
 let g:go_highlight_build_constraints = 1
 let g:go_highlight_extra_types = 1
 let g:go_highlight_fields = 1

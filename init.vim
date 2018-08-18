@@ -60,6 +60,7 @@ Plug 'zchee/deoplete-jedi'
 " Go lang plugins
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 Plug 'jodosha/vim-godebug'
+Plug 'sebdah/vim-delve'
 
 " Initialize plugin system
 call plug#end()
@@ -77,7 +78,6 @@ set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set mouse=a
-set number relativenumber
 set cc=80
 syntax on
 " Enable folding
@@ -85,6 +85,16 @@ set foldmethod=indent
 set foldlevel=99     " Open NERDTree automatically when no file specified
 set encoding=utf-8
 " autocmd BufRead * set scroll=20
+" Auto save
+autocmd FocusLost * :wa
+" Relative number
+set number relativenumber
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu | set nornu | endif
+augroup END
+set number relativenumber
 
 " Windows
 set previewheight=6
