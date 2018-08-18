@@ -96,9 +96,18 @@ augroup numbertoggle
 augroup END
 set number relativenumber
 
-" Windows
+" Windows // preview window
 set previewheight=6
 :botright cwindow
+augroup previewWindowPosition
+   au!
+   autocmd BufWinEnter * call PreviewWindowPosition()
+augroup END
+function! PreviewWindowPosition()
+   if &previewwindow
+      wincmd J
+   endif
+endfunction 
 
 " Commenting code
 " Add spaces after comment delimiters by default
