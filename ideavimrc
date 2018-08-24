@@ -15,5 +15,6 @@ nnoremap <leader>en :action GotoNextError<CR>
 nnoremap <leader>ep :action GotoPreviousError<CR>
 
 nnoremap <leader><leader> :action HideAllWindows<CR>
+nnoremap <leader><leader>d :action ToggleDistractionFreeMode<CR>
 
 
