@@ -171,6 +171,9 @@ let g:AutoPairsShortcutFastWrap = '<C-e>'
 " let g:AutoPairsShortcutJump = '<D-n>'
 " let g:AutoPairsShortcutBackInsert = '<D-b>'
 
+" SWIFT SETUP
+source ~/.config/nvim/init_swift.vim
+
 " JAVASCRIPT SETUP
 source ~/.config/nvim/init_js.vim
 
