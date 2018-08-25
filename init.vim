@@ -48,6 +48,10 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
+" Swift plugins
+Plug 'keith/swift.vim'
+Plug 'mitsuse/autocomplete-swift'
+
 " Javascript plugins
 Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
 Plug 'pangloss/vim-javascript'
