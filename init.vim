@@ -50,6 +50,11 @@ Plug 'Shougo/neosnippet-snippets'
 
 " Kotlin
 Plug 'udalov/kotlin-vim'
+
+" Swift plugins
+Plug 'keith/swift.vim'
+Plug 'mitsuse/autocomplete-swift'
+
 " Javascript plugins
 Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
 Plug 'pangloss/vim-javascript'
@@ -168,6 +173,9 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:AutoPairsShortcutFastWrap = '<C-e>'
 " let g:AutoPairsShortcutJump = '<D-n>'
 " let g:AutoPairsShortcutBackInsert = '<D-b>'
+
+" SWIFT SETUP
+source ~/.config/nvim/init_swift.vim
 
 " JAVASCRIPT SETUP
 source ~/.config/nvim/init_js.vim
