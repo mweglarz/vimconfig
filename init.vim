@@ -48,6 +48,8 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
+" Kotlin
+Plug 'udalov/kotlin-vim'
 " Javascript plugins
 Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
 Plug 'pangloss/vim-javascript'
