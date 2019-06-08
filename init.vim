@@ -10,7 +10,7 @@ call plug#begin('~/.vim/plugged')
 " TreeView
 Plug 'scrooloose/nerdtree'
 " Commenting code
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 " Autocomplete braces
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/vim-slash'
@@ -28,6 +28,8 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 " Easy motion
 Plug 'easymotion/vim-easymotion'
+" Search
+Plug 'mileszs/ack.vim'
 
 " Color schemes
 Plug 'ayu-theme/ayu-vim' " or other package manager
@@ -43,17 +45,26 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Code completion
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+
+" CSV
+Plug 'TMiguelT/csv.vim'
+
+" Dart + Flutter
+Plug 'dart-lang/dart-vim-plugin'
 
 " Kotlin
 Plug 'udalov/kotlin-vim'
 
 " Swift plugins
 Plug 'keith/swift.vim'
-Plug 'mitsuse/autocomplete-swift'
 
 " Javascript plugins
 Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
@@ -73,6 +84,7 @@ Plug 'sebdah/vim-delve'
 call plug#end()
 
 " COMMON
+let mapleader=","
 set nohls
 set autowrite
 set splitright
@@ -117,16 +129,11 @@ function! PreviewWindowPosition()
 endfunction 
 
 " Commenting code
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-" Enable NERDCommenterToggle to check all selected lines is commented or not 
-let g:NERDToggleCheckAllLines = 1
+map <leader>c<space> :Commentary<CR>
 
 " Tagbar
 let g:tagbar_autopreview=1
-let g:tagbar_autoclose=1
+let g:tagbar_autoclose=0
 let g:tagbar_autofocus=1
 
 autocmd StdinReadPre * let s:std_in=1
@@ -146,8 +153,6 @@ let g:gruvbox_contrast_dark='hard'
 let g:gruvbox_contrast_light='soft'
 colorscheme gruvbox
 let g:airline_powerline_fonts = 1
-
-let mapleader=","
 
 " Path to python interpreter for neovim
 " mac os 
@@ -173,6 +178,20 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:AutoPairsShortcutFastWrap = '<C-e>'
 " let g:AutoPairsShortcutJump = '<D-n>'
 " let g:AutoPairsShortcutBackInsert = '<D-b>'
+"
+" LSP setup
+" Required for operations modifying multiple buffers like rename.
+set hidden
+
+let g:LanguageClient_serverCommands = {
+    \ 'swift': ['~/Development/swift/sourcekit-lsp/.build/debug/sourcekit-lsp'],
+    \ }
+
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+" Or map each action separately
+nnoremap <silent> <leader>d :call LanguageClient#textDocument_hover()<CR>
+nnoremap <silent> gd :call LanguageClient#textDocument_definition()<CR>
+" nnoremap <silent> <F2> :call LanguageClient#textDocument_rename()<CR>
 
 " SWIFT SETUP
 source ~/.config/nvim/init_swift.vim
@@ -217,7 +236,8 @@ let g:neosnippet#enable_completed_snippet = 1
 set completeopt+=longest
 " For conceal markers.
 if has('conceal')
-  set conceallevel=1 concealcursor=niv
+  set conceallevel=1
+  " set conceallevel=1 concealcursor=niv
 endif
 
 set rtp+=~/.fzf
