@@ -32,13 +32,13 @@ Plug 'easymotion/vim-easymotion'
 Plug 'mileszs/ack.vim'
 
 " Color schemes
-Plug 'ayu-theme/ayu-vim' " or other package manager
+" Plug 'ayu-theme/ayu-vim' " or other package manager
 Plug 'morhetz/gruvbox'
-Plug 'danilo-augusto/vim-afterglow'
-Plug 'chriskempson/base16-vim'
-Plug 'aradunovic/perun.vim'
-Plug 'mweglarz/spacedust-theme-vim'
-Plug 'geetarista/ego.vim'
+" Plug 'danilo-augusto/vim-afterglow'
+" Plug 'chriskempson/base16-vim'
+" Plug 'aradunovic/perun.vim'
+" Plug 'mweglarz/spacedust-theme-vim'
+" Plug 'geetarista/ego.vim'
 
 " Powerline for vim
 Plug 'vim-airline/vim-airline'
@@ -70,9 +70,8 @@ Plug 'keith/swift.vim'
 Plug 'othree/html5.vim'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'pangloss/vim-javascript'
+"Plug 'mxw/vim-jsx'
 Plug 'leafgarland/typescript-vim'
-Plug 'mxw/vim-jsx'
-Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'peitalin/vim-jsx-typescript'
 
 " Python plugins
