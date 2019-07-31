@@ -67,10 +67,13 @@ Plug 'udalov/kotlin-vim'
 Plug 'keith/swift.vim'
 
 " Javascript plugins
-Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
-Plug 'pangloss/vim-javascript'
-Plug 'mxw/vim-jsx'
 Plug 'othree/html5.vim'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'pangloss/vim-javascript'
+Plug 'leafgarland/typescript-vim'
+Plug 'mxw/vim-jsx'
+Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Python plugins
 Plug 'zchee/deoplete-jedi'
