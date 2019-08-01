@@ -40,6 +40,7 @@ let g:go_highlight_variable_assignments = 1
 let g:go_auto_sameids = 0
 let g:go_auto_type_info = 1
 let g:go_test_show_name = 1
+let g:go_info_mode = 'guru'
 
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#sources#go#gocode_binary = '$GOPATH/bin/gocode'
