@@ -48,12 +48,15 @@ Plug 'zchee/deoplete-go', { 'do': 'make'}
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 
+" LSP
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+
 " Kotlin
 Plug 'udalov/kotlin-vim'
 
 " Swift plugins
 Plug 'keith/swift.vim'
-Plug 'mitsuse/autocomplete-swift'
 
 " Javascript plugins
 Plug 'carlitux/deoplete-ternjs', { 'do': 'sudo npm install -g tern' }
@@ -173,7 +176,10 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 let g:AutoPairsShortcutFastWrap = '<C-e>'
 " let g:AutoPairsShortcutJump = '<D-n>'
 " let g:AutoPairsShortcutBackInsert = '<D-b>'
-
+"
+au! BufNewFile,BufRead Podfile setf ruby
+au! BufNewFile,BufRead *.podspec setf ruby
+"
 " SWIFT SETUP
 source ~/.config/nvim/init_swift.vim
 
@@ -218,6 +224,14 @@ set completeopt+=longest
 " For conceal markers.
 if has('conceal')
   set conceallevel=1 concealcursor=niv
+endif
+
+if executable('sourcekit-lsp')
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'sourcekit-lsp',
+        \ 'cmd': {server_info->['sourcekit-lsp']},
+        \ 'whitelist': ['swift'],
+        \ })
 endif
 
 set rtp+=~/.fzf
